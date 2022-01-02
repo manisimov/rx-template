@@ -4,7 +4,7 @@ I use this project as a template for YRDKRX62N dev. board with Renesas RX600 mic
 
 Docker image from [here](https://github.com/manisimov/rx-gcc-docker) has everything needed for building and debugging.
 
-When the image is ready, start a new container with:
+When the image is ready, start a new container with (attach board to USB before starting the container):
 
         ./dock.sh start
         
