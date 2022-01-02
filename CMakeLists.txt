@@ -17,7 +17,7 @@ add_executable (${PROJECT_NAME} src/main.c
                                 src/device/cpu.S
                )
 
-target_include_directories (${PROJECT_NAME} PRIVATE src/device src/device)
+target_include_directories (${PROJECT_NAME} PRIVATE src/device)
 target_compile_options (${PROJECT_NAME} PRIVATE -mcpu=rx600 -mlittle-endian-data)
 target_link_options (${PROJECT_NAME} PRIVATE "-T${CMAKE_SOURCE_DIR}/src/device/RX62N.ld"
                                              -nostartfiles
