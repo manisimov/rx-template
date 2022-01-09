@@ -40,6 +40,7 @@ add_custom_target (cgdbl
                    -ex 'monitor halt'
                    -ex 'monitor reset 2'
                    -ex 'load'
+                   -x .gdbinit
                    DEPENDS ${PROJECT_NAME})
 
 add_custom_target (cgdbr
@@ -47,4 +48,9 @@ add_custom_target (cgdbr
                    -ex 'target remote 127.0.0.1:2331'
                    -ex 'monitor halt'
                    -ex 'monitor reset 2'
+                   -x .gdbinit
                    DEPENDS ${PROJECT_NAME})
+
+# Copy gdb scripts
+file(COPY ${CMAKE_SOURCE_DIR}/.gdbinit DESTINATION ${CMAKE_BINARY_DIR})
+file(COPY ${CMAKE_SOURCE_DIR}/gdb_scripts DESTINATION ${CMAKE_BINARY_DIR})
